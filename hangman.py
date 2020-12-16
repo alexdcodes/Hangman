@@ -36,7 +36,7 @@ def button(word, x, y, w, h, ic, ac, action=None):
     else:
         pygame.draw.rect(screen, ic, (x, y, w, h))
 
-    buttonText = pygame.font.Font("freesansbold.ttf", 20)
+    buttonText = pygame.font.Font("freesansbold.ttf", 20)  # Tahoma.tff
     buttonTextSurf = buttonText.render(word, True, ww1)
     buttonTextRect = buttonTextSurf.get_rect()
     buttonTextRect.center = ((x + (w / 2)), (y + (h / 2)))
@@ -46,11 +46,11 @@ def button(word, x, y, w, h, ic, ac, action=None):
 def endGame():
     global textBoxSpace, textBoxNumber, end, start
     end = timer()
-    print("Time it took: ", end - start)
+    print("Timing Accomplishments: ", end - start)
     timeTaken = (end - start)
     textBoxSpace = 5
     textBoxNumber = 0
-    message = "Count Down: " + str(round(timeTaken)) + "s"
+    message = "Counter: " + str(round(timeTaken)) + "s"
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
